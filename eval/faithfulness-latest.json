@@ -1,0 +1,301 @@
+[
+ {
+  "id": 1,
+  "type": "retrieval",
+  "refused_gate": false,
+  "top_score": 0.7406582722301658,
+  "kw_hit": 2,
+  "kw_total": 2,
+  "faithfulness": 1.0,
+  "unsupported": []
+ },
+ {
+  "id": 2,
+  "type": "retrieval",
+  "refused_gate": false,
+  "top_score": 0.7476420107314627,
+  "kw_hit": 3,
+  "kw_total": 3,
+  "faithfulness": 0.875,
+  "unsupported": [
+   "应该查看原项目仓库获取完整文档"
+  ]
+ },
+ {
+  "id": 3,
+  "type": "retrieval",
+  "refused_gate": false,
+  "top_score": 0.7580039443941514,
+  "kw_hit": 3,
+  "kw_total": 3,
+  "faithfulness": 1.0,
+  "unsupported": []
+ },
+ {
+  "id": 4,
+  "type": "retrieval",
+  "refused_gate": false,
+  "top_score": 0.7173570122593329,
+  "kw_hit": 2,
+  "kw_total": 2,
+  "faithfulness": 1.0,
+  "unsupported": []
+ },
+ {
+  "id": 5,
+  "type": "retrieval",
+  "refused_gate": false,
+  "top_score": 0.7395484938122755,
+  "kw_hit": 2,
+  "kw_total": 2,
+  "faithfulness": 0.909,
+  "unsupported": [
+   "支持智谱 GLM，需要 ZHIPU_API_KEY（资料[2]中被截断，环境变量名未明确给出）",
+   "各类 OpenAI 兼容层（如火山引擎、智谱等）是免 key 方式（资料[1]仅说明配置方法，未说明这些平台提供免费额度或公开接口）"
+  ]
+ },
+ {
+  "id": 6,
+  "type": "retrieval",
+  "refused_gate": false,
+  "top_score": 0.642694100771608,
+  "kw_hit": 1,
+  "kw_total": 2,
+  "faithfulness": 1.0,
+  "unsupported": []
+ },
+ {
+  "id": 7,
+  "type": "retrieval",
+  "refused_gate": false,
+  "top_score": 0.6894263421657713,
+  "kw_hit": 1,
+  "kw_total": 1,
+  "faithfulness": 1.0,
+  "unsupported": []
+ },
+ {
+  "id": 8,
+  "type": "retrieval",
+  "refused_gate": false,
+  "top_score": 0.6722572035176269,
+  "kw_hit": 1,
+  "kw_total": 2,
+  "faithfulness": 1.0,
+  "unsupported": []
+ },
+ {
+  "id": 9,
+  "type": "retrieval",
+  "refused_gate": false,
+  "top_score": 0.7809471487999184,
+  "kw_hit": 2,
+  "kw_total": 2,
+  "faithfulness": 0.909,
+  "unsupported": [
+   "superpowers-zh 包含 20 个 skills"
+  ]
+ },
+ {
+  "id": 10,
+  "type": "retrieval",
+  "refused_gate": false,
+  "top_score": 0.7447181775326079,
+  "kw_hit": 1,
+  "kw_total": 2,
+  "faithfulness": 1.0,
+  "unsupported": []
+ },
+ {
+  "id": 11,
+  "type": "retrieval",
+  "refused_gate": false,
+  "top_score": 0.6838374953076238,
+  "kw_hit": 0,
+  "kw_total": 2,
+  "faithfulness": 1.0,
+  "unsupported": []
+ },
+ {
+  "id": 12,
+  "type": "retrieval",
+  "refused_gate": false,
+  "top_score": 0.7187059447065085,
+  "kw_hit": 1,
+  "kw_total": 1,
+  "faithfulness": 1.0,
+  "unsupported": []
+ },
+ {
+  "id": 13,
+  "type": "retrieval",
+  "refused_gate": false,
+  "top_score": 0.7171451617989166,
+  "kw_hit": 3,
+  "kw_total": 3,
+  "faithfulness": 1.0,
+  "unsupported": []
+ },
+ {
+  "id": 14,
+  "type": "retrieval",
+  "refused_gate": false,
+  "top_score": 0.7482512893379112,
+  "kw_hit": 1,
+  "kw_total": 1,
+  "faithfulness": 1.0,
+  "unsupported": []
+ },
+ {
+  "id": 15,
+  "type": "retrieval",
+  "refused_gate": false,
+  "top_score": 0.6841704720232272,
+  "kw_hit": 2,
+  "kw_total": 2,
+  "faithfulness": 0.909,
+  "unsupported": [
+   "资料中没有找到更详细的输入格式具体说明（如是纯文本、结构化数据还是其他形式）"
+  ]
+ },
+ {
+  "id": 16,
+  "type": "retrieval",
+  "refused_gate": false,
+  "top_score": 0.7443418848046309,
+  "kw_hit": 2,
+  "kw_total": 2,
+  "faithfulness": 1.0,
+  "unsupported": []
+ },
+ {
+  "id": 17,
+  "type": "retrieval",
+  "refused_gate": false,
+  "top_score": 0.6150436264224541,
+  "kw_hit": 2,
+  "kw_total": 2,
+  "faithfulness": 1.0,
+  "unsupported": []
+ },
+ {
+  "id": 18,
+  "type": "retrieval",
+  "refused_gate": false,
+  "top_score": 0.6834763582366882,
+  "kw_hit": 1,
+  "kw_total": 1,
+  "faithfulness": 1.0,
+  "unsupported": []
+ },
+ {
+  "id": 19,
+  "type": "retrieval",
+  "refused_gate": false,
+  "top_score": 0.6871065087851581,
+  "kw_hit": 1,
+  "kw_total": 1,
+  "faithfulness": 1.0,
+  "unsupported": []
+ },
+ {
+  "id": 20,
+  "type": "retrieval",
+  "refused_gate": false,
+  "top_score": 0.6409030648816637,
+  "kw_hit": 2,
+  "kw_total": 2,
+  "faithfulness": 0.933,
+  "unsupported": [
+   "隐私优先（对 local-agent-toolkit 的描述）"
+  ]
+ },
+ {
+  "id": 21,
+  "type": "retrieval",
+  "refused_gate": false,
+  "top_score": 0.7059561539966798,
+  "kw_hit": 2,
+  "kw_total": 2,
+  "faithfulness": 1.0,
+  "unsupported": []
+ },
+ {
+  "id": 22,
+  "type": "retrieval",
+  "refused_gate": false,
+  "top_score": 0.6845295869182993,
+  "kw_hit": 2,
+  "kw_total": 2,
+  "faithfulness": 1.0,
+  "unsupported": []
+ },
+ {
+  "id": 23,
+  "type": "retrieval",
+  "refused_gate": false,
+  "top_score": 0.721300707483661,
+  "kw_hit": 2,
+  "kw_total": 2,
+  "faithfulness": 1.0,
+  "unsupported": []
+ },
+ {
+  "id": 24,
+  "type": "retrieval",
+  "refused_gate": false,
+  "top_score": 0.6280341709882906,
+  "kw_hit": 1,
+  "kw_total": 1,
+  "faithfulness": 1.0,
+  "unsupported": []
+ },
+ {
+  "id": 25,
+  "type": "refusal",
+  "refused_gate": true,
+  "top_score": 0.39669651778420445,
+  "refused_ok": true,
+  "answer_head": "资料中没有找到相关信息。"
+ },
+ {
+  "id": 26,
+  "type": "refusal",
+  "refused_gate": true,
+  "top_score": 0.46454177807524566,
+  "refused_ok": true,
+  "answer_head": "资料中没有找到相关信息。"
+ },
+ {
+  "id": 27,
+  "type": "refusal",
+  "refused_gate": false,
+  "top_score": 0.6480588896327566,
+  "refused_ok": true,
+  "answer_head": "资料中没有找到相关信息。提供的资料主要介绍了 agency-orchestrator 的功能特性（267个AI角色、YAML零代码、支持11种大模型等）和使用案"
+ },
+ {
+  "id": 28,
+  "type": "refusal",
+  "refused_gate": false,
+  "top_score": 0.5594035770641925,
+  "refused_ok": true,
+  "answer_head": "资料中没有找到相关信息。\n\n提供的资料只包含了 superpowers-zh 项目本身的介绍（项目定义、支持的工具列表、功能说明等），但没有涉及作者的个人信息，"
+ },
+ {
+  "id": 29,
+  "type": "refusal",
+  "refused_gate": true,
+  "top_score": 0.4788266768868876,
+  "refused_ok": true,
+  "answer_head": "资料中没有找到相关信息。"
+ },
+ {
+  "id": 30,
+  "type": "refusal",
+  "refused_gate": false,
+  "top_score": 0.6440666782657283,
+  "refused_ok": true,
+  "answer_head": "资料中没有找到相关信息。\n\n提供的文档涉及 OpenShorts 的渲染管线（Remotion 和 FFmpeg）、质量门禁、素材处理等内容，但没有说明具体支持"
+ }
+]

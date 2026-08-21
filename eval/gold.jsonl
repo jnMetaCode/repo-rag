@@ -1,0 +1,30 @@
+{"id": 1, "type": "retrieval", "question": "agency-agents-zh 一共有多少个 AI 专家角色？覆盖多少个部门？", "expected_sources": ["agency-agents-zh.md"], "keywords": ["268", "20"]}
+{"id": 2, "type": "retrieval", "question": "agency-agents 中文版相比上游新增了哪些中国市场原创智能体？", "expected_sources": ["agency-agents-zh.md"], "keywords": ["小红书", "抖音", "50"]}
+{"id": 3, "type": "retrieval", "question": "agency-agents-zh 支持哪些 AI 编程工具？", "expected_sources": ["agency-agents-zh.md"], "keywords": ["Claude Code", "Cursor", "18"]}
+{"id": 4, "type": "retrieval", "question": "Agency Orchestrator 是做什么的？一句话说清", "expected_sources": ["agency-orchestrator.md"], "keywords": ["一句话", "协作"]}
+{"id": 5, "type": "retrieval", "question": "agency-orchestrator 支持多少种大模型？没有 API key 能用吗？", "expected_sources": ["agency-orchestrator.md"], "keywords": ["11", "免 key"]}
+{"id": 6, "type": "retrieval", "question": "orchestrator 的工作流是用什么格式定义的？需要写代码吗？", "expected_sources": ["agency-orchestrator.md"], "keywords": ["YAML", "零代码"]}
+{"id": 7, "type": "retrieval", "question": "agency-orchestrator 推荐用哪家大模型的 key？", "expected_sources": ["agency-orchestrator.md"], "keywords": ["DeepSeek"]}
+{"id": 8, "type": "retrieval", "question": "superpowers-zh 是什么项目？上游有多少 star？", "expected_sources": ["superpowers-zh.md"], "keywords": ["汉化", "250k"]}
+{"id": 9, "type": "retrieval", "question": "superpowers-zh 包含多少个 skills？支持多少款 AI 编程工具？", "expected_sources": ["superpowers-zh.md"], "keywords": ["20", "23"]}
+{"id": 10, "type": "retrieval", "question": "superpowers-zh 里有哪些中国原创的 skills？", "expected_sources": ["superpowers-zh.md"], "keywords": ["4", "原创"]}
+{"id": 11, "type": "retrieval", "question": "superpowers 教 AI 的工作方法都有哪些？", "expected_sources": ["superpowers-zh.md", "jnMetaCode.md"], "keywords": ["TDD", "调试"]}
+{"id": 12, "type": "retrieval", "question": "ai-coding-guide 覆盖了多少款 AI 编程工具的最佳实践？", "expected_sources": ["ai-coding-guide.md"], "keywords": ["10"]}
+{"id": 13, "type": "retrieval", "question": "AI 编程实战三卷书分别讲什么主题？", "expected_sources": ["ai-coding-trilogy.md"], "keywords": ["入门", "工作流", "架构"]}
+{"id": 14, "type": "retrieval", "question": "ai-shortfilm-prompts 的在线 prompt builder 支持多少种题材类型？", "expected_sources": ["ai-shortfilm-prompts.md"], "keywords": ["21"]}
+{"id": 15, "type": "retrieval", "question": "OpenShorts 是什么？输入输出分别是什么？", "expected_sources": ["openshorts.md"], "keywords": ["短视频", "文案"]}
+{"id": 16, "type": "retrieval", "question": "OpenShorts 有几条内容路线？用什么渲染器？", "expected_sources": ["openshorts.md"], "keywords": ["三条", "Remotion"]}
+{"id": 17, "type": "retrieval", "question": "OpenShorts 的质量门禁检查哪些指标？", "expected_sources": ["openshorts.md"], "keywords": ["七", "LUFS"]}
+{"id": 18, "type": "retrieval", "question": "OpenShorts 用什么校验成片内容的正确性？", "expected_sources": ["openshorts.md"], "keywords": ["Whisper"]}
+{"id": 19, "type": "retrieval", "question": "jnMetaCode 的公众号叫什么名字？主要聊什么？", "expected_sources": ["jnMetaCode.md"], "keywords": ["AI不止语"]}
+{"id": 20, "type": "retrieval", "question": "local-agent-toolkit 给 agent 提供什么能力？数据存在哪里？", "expected_sources": ["jnMetaCode.md"], "keywords": ["记忆", "本地"]}
+{"id": 21, "type": "retrieval", "question": "agency-agents 有印尼语版吗？翻译了多少个 agent？", "expected_sources": ["agency-agents-id.md"], "keywords": ["187", "184"]}
+{"id": 22, "type": "retrieval", "question": "印尼语版欢迎贡献哪些本地化 agent？", "expected_sources": ["agency-agents-id.md"], "keywords": ["Tokopedia", "Gojek"]}
+{"id": 23, "type": "retrieval", "question": "free-programming-books 是什么项目？在哪里可以搜索？", "expected_sources": ["free-programming-books.md"], "keywords": ["免费", "search"]}
+{"id": 24, "type": "retrieval", "question": "想在线体验专家角色库，不装任何东西，去哪个网址？", "expected_sources": ["agency-agents-zh.md"], "keywords": ["ao.aiolaola.com"]}
+{"id": 25, "type": "refusal", "question": "红烧肉怎么做才好吃？", "expected_sources": [], "keywords": []}
+{"id": 26, "type": "refusal", "question": "北京明天的天气怎么样？", "expected_sources": [], "keywords": []}
+{"id": 27, "type": "refusal", "question": "agency-orchestrator 的月活跃用户数是多少？", "expected_sources": [], "keywords": [], "note": "语料内无此数据——近域拒答，比远域难"}
+{"id": 28, "type": "refusal", "question": "superpowers-zh 的作者住在哪个城市？", "expected_sources": [], "keywords": [], "note": "近域无答案"}
+{"id": 29, "type": "refusal", "question": "如何申请美国 H1B 签证？", "expected_sources": [], "keywords": []}
+{"id": 30, "type": "refusal", "question": "OpenShorts 支持 8K HDR 视频导出吗？", "expected_sources": [], "keywords": [], "note": "近域无答案，容易被强行回答"}
