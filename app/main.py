@@ -5,6 +5,7 @@ from contextlib import asynccontextmanager
 
 import httpx
 from fastapi import FastAPI, Request
+from fastapi.responses import HTMLResponse
 from pydantic import BaseModel, Field
 
 from .config import settings
@@ -38,6 +39,12 @@ class QueryRequest(BaseModel):
 
 def create_app() -> FastAPI:
     app = FastAPI(title="repo-rag", version="0.1.0", lifespan=lifespan)
+
+    @app.get("/", response_class=HTMLResponse)
+    async def index() -> str:
+        from .ui import PAGE
+
+        return PAGE
 
     @app.post("/v1/query")
     async def query(req: QueryRequest, request: Request) -> dict:
