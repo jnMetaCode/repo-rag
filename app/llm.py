@@ -35,11 +35,26 @@ class LlmClient:
         )
 
 
-class ClaudeCliLlm:
-    """本地 claude CLI 当生成端（claude -p 非交互模式）：免 API key。
+def _sandbox() -> str:
+    """空目录：隔离掉 claude CLI 的项目上下文（CLAUDE.md / 源码）。"""
+    import tempfile
+    from pathlib import Path
 
-    与 HTTP 后端同接口（complete）。token 数 CLI 不回报，记 0——
-    计费统计在此后端下不可用，属已声明的取舍。
+    d = Path(tempfile.gettempdir()) / "claude-llm-sandbox"
+    d.mkdir(exist_ok=True)
+    return str(d)
+
+
+class ClaudeCliLlm:
+    """    本地 claude CLI 作为纯 LLM 后端。
+
+    ⚠️ 关键隔离（2026-08-22 实测发现的真 bug）：claude CLI 不是纯 LLM，
+    它是带工具和项目上下文的 agent——在项目目录里跑会读到 CLAUDE.md 和源码，
+    导致它"知道"自己在哪个仓库里，污染回答（实测：agent 会反问"要我从项目里提取数据吗"）。
+    三重隔离：① cwd 指向空沙箱目录 ② --allowedTools "" 禁用全部工具
+    ③ prompt 走 stdin（变参 flag 会吞掉位置参数）。
+
+    token 数 CLI 不回报，记 0——计费统计在此后端不可用，属已声明的取舍。
     """
 
     def __init__(self, model: str = "haiku") -> None:
@@ -50,13 +65,17 @@ class ClaudeCliLlm:
 
         proc = await asyncio.create_subprocess_exec(
             "claude", "-p", "--model", self._model,
+            "--allowedTools", "",
             "--append-system-prompt", system,
-            user,
+            stdin=asyncio.subprocess.PIPE,
             stdout=asyncio.subprocess.PIPE,
             stderr=asyncio.subprocess.PIPE,
+            cwd=_sandbox(),
         )
         try:
-            out, err = await asyncio.wait_for(proc.communicate(), timeout=180)
+            out, err = await asyncio.wait_for(
+                proc.communicate(user.encode()), timeout=180
+            )
         except TimeoutError:
             proc.kill()
             raise RuntimeError("claude CLI 生成超时(180s)") from None
