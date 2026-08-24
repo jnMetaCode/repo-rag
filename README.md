@@ -2,23 +2,42 @@
 
 把开源仓库文档做成可问答的中文知识库：**bge-m3 向量检索 · 引用溯源 · 阈值拒答 · pgvector**。
 
-> Built in public：一个用「评估驱动」方法论从零搭起来的 RAG——每个技术决策（分块/检索通道/拒答阈值）都由 30 条黄金测试集的实测数据推导，而不是照抄最佳实践。
+> Built in public：一个用「评估驱动」方法论搭起来的 RAG——每个技术决策（分块 / 检索通道 / 拒答阈值）
+> 都由 30 条黄金测试集的实测数据推导，而不是照抄最佳实践。**全链路零 API key**，本地跑得动。
+
+| 检索 hit@1 | hit@5 | MRR | faithfulness | 拒答准确 |
+|---|---|---|---|---|
+| **95.8%** | **100%** | **0.979** | **0.981** | **6/6** |
+
+<sub>30 条自建黄金集实测（24 检索 + 6 拒答）· 口径与复现命令见下方「实测结果」</sub>
+
+**三个和最佳实践相反的结论**：① BM25 基线 hit@5 91.7% 看着够用，但 **miss 全是跨语言**——这才是换 bge-m3 的理由；
+② 混合检索 RRF 在这个语料上**反而把 hit@1 拉低到 83.3%**，所以默认关掉了；
+③ 拒答阈值不是拍的，是跑分数分布校准出来的（0.50），而且有一类问题**检索分原理上识别不了**，必须靠第二层兜。
 
 ## 跑起来（runbook）
 
-```bash
-docker compose up -d db          # pgvector
-uv sync
-cp .env.example .env             # 填 RAG_EMBED_API_KEY（SiliconFlow）+ RAG_LLM_API_KEY（DeepSeek）
-uv run python scripts/fetch_corpus.py jnMetaCode 20   # 抓语料到 data/
-uv run python -m app.ingest data                      # 分块+向量化+入库
-uv run uvicorn app.main:app --reload
-```
+**默认路径：零 API key**（embedding 走本地 ollama，生成走本地 claude CLI）
 
 ```bash
-curl -s localhost:8000/v1/query -H 'content-type: application/json' \
+ollama pull bge-m3               # 本地 embedding，1.2G
+docker compose up -d db          # pgvector
+uv sync
+uv run python scripts/fetch_corpus.py <你的 GitHub 用户名> 20   # 抓语料到 data/
+uv run python -m app.ingest data                              # 分块+向量化+入库（502 chunks 约 16s）
+uv run uvicorn app.main:app --port 8001                       # 打开 http://localhost:8001
+```
+
+想换成云端 API：`cp .env.example .env`，填 `RAG_EMBED_API_KEY`（任何 OpenAI 兼容 embeddings 端点）与
+`RAG_LLM_API_KEY`（DeepSeek），并把 `RAG_EMBED_BACKEND=api`、`RAG_LLM_BACKEND=api`。
+
+> ⚠️ 本机若有系统代理（Clash 等），它会劫持到 localhost 的请求并返回 502——
+> 代码里 ollama 客户端已设 `trust_env=False` 绕开，这是私有化部署的典型踩坑点。
+
+```bash
+curl -s localhost:8001/v1/query -H 'content-type: application/json' \
   -d '{"question": "agency-orchestrator 是做什么的？"}' | jq
-curl -s localhost:8000/v1/stats
+curl -s localhost:8001/v1/stats
 ```
 
 测试（无需 key、无需数据库——集成测试没库时自动跳过）：
