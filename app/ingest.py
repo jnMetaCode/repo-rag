@@ -30,6 +30,13 @@ def load_files(directory: Path) -> list[tuple[str, str]]:
 async def ingest(files: list[tuple[str, str]]) -> None:
     store = PgStore(settings.db_dsn, settings.embed_dim)
     await store.init()
+    try:
+        await _ingest_all(store, files)
+    finally:
+        await store.close()
+
+
+async def _ingest_all(store: PgStore, files: list[tuple[str, str]]) -> None:
     async with httpx.AsyncClient() as client:
         embedder = make_embedder(client, settings)
         total = 0

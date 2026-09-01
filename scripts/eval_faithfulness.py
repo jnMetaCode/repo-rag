@@ -93,6 +93,7 @@ async def main() -> None:
         rows = await asyncio.gather(
             *[run_item(g, embedder, store, gen_llm, judge_llm) for g in gold]
         )
+    await store.close()
     ret = [r for r in rows if r["type"] == "retrieval"]
     ref = [r for r in rows if r["type"] == "refusal"]
     faiths = [r["faithfulness"] for r in ret if r.get("faithfulness") is not None]

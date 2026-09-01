@@ -95,6 +95,7 @@ async def main() -> None:
             # 同步壳跑异步通道
             vec_map = {g["question"]: await vec_search(g["question"]) for g in gold}
             hyb_map = {g["question"]: await hybrid_search(g["question"]) for g in gold}
+        await store.close()
         score_channel("Vector", gold, vec_map.__getitem__)
         score_channel("Hybrid(RRF)", gold, hyb_map.__getitem__)
 

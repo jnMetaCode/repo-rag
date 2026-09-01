@@ -50,6 +50,7 @@ async def test_roundtrip_search():
     assert hits[0].content == chunks[0].text
     assert hits[0].score > 0.99
     assert await store.count() >= 2
+    await store.close()
 
 
 @pytest.mark.asyncio
@@ -73,3 +74,4 @@ async def test_replace_source_removes_stale_chunks():
     removed = await store.prune_missing(["其他.md"])
     assert removed >= 1
     assert not [h for h in await store.fetch_all() if h.source == "re.md"]
+    await store.close()
